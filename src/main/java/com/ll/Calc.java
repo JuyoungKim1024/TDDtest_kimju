@@ -21,6 +21,8 @@ public class Calc {
         for (int i = 1; i < bits.length; i += 2) {
             if (bits[i].equals("*")) {
                 num *= Integer.parseInt(bits[i + 1]);
+            } else if (bits[i].equals("/")) {
+                num /= Integer.parseInt(bits[i + 1]);
             } else {
                 if (sign.equals("+")) {
                     result += num;

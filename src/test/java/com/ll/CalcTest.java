@@ -171,4 +171,15 @@ public class CalcTest {
         assertThat(Calc.run("3 * 1 + (1 - (4 * 1 - (1 - 1)))")).isEqualTo(0);
     }
 
+    @Test
+    @DisplayName("10 / 2 == 5")
+    void t29() {
+        assertThat(Calc.run("10 / 2")).isEqualTo(5);
+    }
+
+    @Test
+    @DisplayName("20 / 5 + 2 == 6")
+    void t30() {
+        assertThat(Calc.run("20 / 5 + 2")).isEqualTo(6);
+    }
 }
