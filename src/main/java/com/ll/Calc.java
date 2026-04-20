@@ -2,21 +2,21 @@ package com.ll;
 
 public class Calc {
     public static int run(String expression) {
+        String[] bits = expression.split(" ");
 
-        if (expression.contains(" + ")) {
-            String[] bits = expression.split(" \\+ ");
-            int num1 = Integer.parseInt(bits[0]);
-            int num2 = Integer.parseInt(bits[1]);
-            return num1 + num2;
+        int result = Integer.parseInt(bits[0]);
+
+        for (int i = 1; i < bits.length; i += 2) {
+
+            int num = Integer.parseInt(bits[i + 1]);
+
+            if (bits[i].equals("+")) {
+                result += num;
+            } else if (bits[i].equals("-")) {
+                result -= num;
+            }
         }
 
-        if (expression.contains(" - ")) {
-            String[] bits = expression.split(" - ");
-            int num1 = Integer.parseInt(bits[0]);
-            int num2 = Integer.parseInt(bits[1]);
-            return num1 - num2;
-        }
-
-        return 0;
+        return result;
     }
 }
