@@ -14,6 +14,8 @@ public class Calc {
                 result += num;
             } else if (bits[i].equals("-")) {
                 result -= num;
+            }else if (bits[i].equals("*")) {
+                result *= num;
             }
         }
 
